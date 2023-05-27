@@ -22,7 +22,7 @@ const HomeScreen = ({}) => {
       return () => {
         componentMounted = false;
       };
-    }, 5000); //refresh in 5 second
+    }, 3000); //refresh in 5 second
 
     return () => {
       clearInterval(intervalId);
@@ -41,7 +41,7 @@ const HomeScreen = ({}) => {
 */
   return (
     <View style={styles.center}>
-      <Text style={styles.buttonText}> Temperature: {temperatureVal}</Text>
+      <Text style={styles.buttonText}> Temperature: {temperatureVal} °C</Text>
       <Text style={styles.buttonText}> CO2: {co2Val}</Text>
       <Text style={styles.buttonText}> Humidity: {humidityVal}</Text>
     </View>

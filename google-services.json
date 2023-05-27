@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "883455412910",
+    "firebase_url": "https://musha-45a05-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "musha-45a05",
+    "storage_bucket": "musha-45a05.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:883455412910:android:5de70c888344d06ba13b3f",
+        "android_client_info": {
+          "package_name": "com.mushapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "883455412910-aq2kvnkvrdto2p87mbkptrv78v3nf13v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1FWoC4LJXz2fDDbn6YjxbViormo6KXq8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "883455412910-aq2kvnkvrdto2p87mbkptrv78v3nf13v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
