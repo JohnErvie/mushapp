@@ -8,6 +8,6 @@ import {AuthContext} from './context/AuthContext';
 
 //export var BASE_URL = 'http://192.168.0.192/api';
 //export var BASE_URL = 'http://192.168.74.169/api';
-export var BASE_URL = 'http://192.168.254.185/api';
+export var LOCAL_BASE_URL = 'https://192.168.254.185/api';
 
-//export var BASE_URL = 'https://fe0f-180-190-30-193.ngrok-free.app/api';
+export var BASE_URL = 'https://mushapp.xyz/api/';

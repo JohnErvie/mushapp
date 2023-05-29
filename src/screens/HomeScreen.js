@@ -6,8 +6,14 @@ import {AuthContext} from '../context/AuthContext';
 import {AntDesign, Entypo} from '@expo/vector-icons';
 
 const HomeScreen = ({}) => {
-  const {temperatureVal, co2Val, humidityVal, getParameter} =
-    useContext(AuthContext);
+  const {
+    temperatureVal,
+    co2Val,
+    humidityVal,
+    getParameter,
+    connection,
+    status,
+  } = useContext(AuthContext);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -22,7 +28,7 @@ const HomeScreen = ({}) => {
       return () => {
         componentMounted = false;
       };
-    }, 3000); //refresh in 5 second
+    }, 3000); //refresh in 2 second
 
     return () => {
       clearInterval(intervalId);
@@ -40,11 +46,18 @@ const HomeScreen = ({}) => {
   }, []);
 */
   return (
-    <View style={styles.center}>
-      <Text style={styles.buttonText}> Temperature: {temperatureVal} °C</Text>
-      <Text style={styles.buttonText}> CO2: {co2Val}</Text>
-      <Text style={styles.buttonText}> Humidity: {humidityVal}</Text>
-    </View>
+    <>
+      <View style={styles.center}>
+        <Text style={styles.Text}> Temperature: {temperatureVal} °C</Text>
+        <Text style={styles.Text}> CO2: {co2Val}</Text>
+        <Text style={styles.Text}>
+          {' '}
+          Humidity: {humidityVal} {'\n\n'}
+        </Text>
+        <Text style={styles.Text}> Connection: {connection}</Text>
+        <Text style={styles.Text}> Status: {status}</Text>
+      </View>
+    </>
   );
 };
 
@@ -55,6 +68,13 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'space-between',
     //alignItems: 'center',
+  },
+  centerText: {
+    //flex: 1,
+    marginTop: 50,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   textBold: {
     fontWeight: '500',
@@ -70,7 +90,7 @@ const styles = StyleSheet.create({
     borderColor: '#5f72ed',
     borderWidth: 1,
   },
-  buttonText: {
+  Text: {
     color: 'black',
     fontWeight: 'bold',
     textTransform: 'uppercase',
