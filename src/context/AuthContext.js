@@ -10,13 +10,8 @@ export const AuthProvider = ({children}) => {
   var [co2Val, setCo2Val] = useState([0]);
   var [humidityVal, setHumidityVal] = useState([0]);
 
-  var [savedtemperatureVal, savedsetTemperatureVal] = useState([0]);
-  var [savedco2Val, savedsetCo2Val] = useState([0]);
-  var [savedhumidityVal, savedsetHumidityVal] = useState([0]);
-
-  var [savedtemperatureVal1, savedsetTemperatureVal1] = useState([0]);
-  var [savedco2Val1, savedsetCo2Val1] = useState([0]);
-  var [savedhumidityVal1, savedsetHumidityVal1] = useState([0]);
+  var [id, setId] = useState([0]);
+  var [savedId, setSavedId] = useState([0]);
 
   var [connection, setConnection] = useState('');
   var [status, setStatus] = useState('');
@@ -51,6 +46,9 @@ export const AuthProvider = ({children}) => {
         humidityVal = response[0].humidity;
         setHumidityVal(humidityVal);
         */
+        id = response[0].ID;
+        setId(id);
+
         temperatureVal = response[0].Temperature;
         setTemperatureVal(temperatureVal);
 
@@ -60,26 +58,13 @@ export const AuthProvider = ({children}) => {
         humidityVal = response[0].humidity;
         setHumidityVal(humidityVal);
 
-        savedtemperatureVal1 = temperatureVal;
-        savedsetTemperatureVal1(savedtemperatureVal1);
-
-        savedco2Val1 = co2Val;
-        savedsetCo2Val1(savedco2Val1);
-
-        savedhumidityVal1 = humidityVal;
-        savedsetHumidityVal1(savedhumidityVal1);
-
         connection = 'Connected';
         setConnection(connection);
 
         status = 'Running';
         setStatus(status);
 
-        if (
-          savedtemperatureVal === savedtemperatureVal1 &&
-          savedco2Val === savedco2Val1 &&
-          savedhumidityVal === savedhumidityVal1
-        ) {
+        if (id === savedId) {
           temperatureVal = 'N/A';
           setTemperatureVal(temperatureVal);
 
@@ -93,15 +78,8 @@ export const AuthProvider = ({children}) => {
           setStatus(status);
         }
 
-        //////
-        savedtemperatureVal = savedtemperatureVal1;
-        savedsetTemperatureVal(savedtemperatureVal);
-
-        savedco2Val = savedco2Val1;
-        savedsetCo2Val(savedco2Val);
-
-        savedhumidityVal = savedhumidityVal1;
-        savedsetHumidityVal(savedhumidityVal);
+        savedId = id;
+        setSavedId(savedId);
 
         //console.log(temperatureVal, savedtemperatureVal);
 
@@ -120,6 +98,9 @@ export const AuthProvider = ({children}) => {
             //alert(response[0].power_consumption);
             //console.log(response);
 
+            id = response[0].ID;
+            setId(id);
+
             temperatureVal = response[0].Temperature;
             setTemperatureVal(temperatureVal);
 
@@ -129,26 +110,13 @@ export const AuthProvider = ({children}) => {
             humidityVal = response[0].humidity;
             setHumidityVal(humidityVal);
 
-            savedtemperatureVal1 = temperatureVal;
-            savedsetTemperatureVal1(savedtemperatureVal1);
-
-            savedco2Val1 = co2Val;
-            savedsetCo2Val1(savedco2Val1);
-
-            savedhumidityVal1 = humidityVal;
-            savedsetHumidityVal1(savedhumidityVal1);
-
             connection = 'Connected';
             setConnection(connection);
 
             status = 'Running';
             setStatus(status);
 
-            if (
-              savedtemperatureVal === savedtemperatureVal1 &&
-              savedco2Val === savedco2Val1 &&
-              savedhumidityVal === savedhumidityVal1
-            ) {
+            if (id === savedId) {
               temperatureVal = 'N/A';
               setTemperatureVal(temperatureVal);
 
@@ -162,17 +130,8 @@ export const AuthProvider = ({children}) => {
               setStatus(status);
             }
 
-            //////
-            savedtemperatureVal = savedtemperatureVal1;
-            savedsetTemperatureVal(savedtemperatureVal);
-
-            savedco2Val = savedco2Val1;
-            savedsetCo2Val(savedco2Val);
-
-            savedhumidityVal = savedhumidityVal1;
-            savedsetHumidityVal(savedhumidityVal);
-
-            console.log(temperatureVal, savedtemperatureVal);
+            savedId = id;
+            setSavedId(savedId);
 
             //console.log('running?');
             //return anomalyData;

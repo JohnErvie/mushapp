@@ -28,7 +28,7 @@ const HomeScreen = ({}) => {
       return () => {
         componentMounted = false;
       };
-    }, 3000); //refresh in 2 second
+    }, 5000); //refresh in 5 second
 
     return () => {
       clearInterval(intervalId);
